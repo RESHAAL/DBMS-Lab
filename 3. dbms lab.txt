@@ -177,3 +177,12 @@ INSERT INTO COURSE(course_id, title, dept_id, credits) VALUES ('CS-001', 'Weekly
 INSERT INTO SECTION (section_id, course_id, sec_id, semester, year, building, room_number, time_slot_id) VALUES  (8, 'CS-001', 1, 'Fall', 2017, NULL, NULL, NULL or ' ');
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+select * from tab;
+decs st_info;
+select max(prn) from st_info;
+--------------------------
+
+to create sequence for a table:
+create sequence st_sq start with 106 increment by 1;
+insert into st_info values(st_sq
