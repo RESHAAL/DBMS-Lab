@@ -149,3 +149,31 @@ INSERT INTO CLASSROOM (building, room_number, capacity) VALUES ('Watson', '3974'
 INSERT INTO CLASSROOM (building, room_number, capacity) VALUES ('Newton', '3163', 45);
 INSERT INTO CLASSROOM (building, room_number, capacity) VALUES ('Taylor', '5223', 55);
 INSERT INTO CLASSROOM (building, room_number, capacity) VALUES ('Taylor', '3783', 50);
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+select * from tab;
+
+select * from department;
+
+desc department; #38 represents integer value
+
+alter table department modify name varchar2(25);
+
+alter table department modify building varchar2(25) not null;
+
+select * from instructor;
+
+select * from department;
+
+update instructor set salary = salary * .1
+where dept_id = slect dept_id from department where name = 'Computer Science');
+
+update instructor set 
+
+update instructor set salary = salary + salary * .05
+where salary < 70000;
+
+INSERT INTO COURSE(course_id, title, dept_id, credits) VALUES ('CS-001', 'Weekly Seminar', 1, 1);
+
+INSERT INTO SECTION (section_id, course_id, sec_id, semester, year, building, room_number, time_slot_id) VALUES  (8, 'CS-001', 1, 'Fall', 2017, NULL, NULL, NULL or ' ');
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
