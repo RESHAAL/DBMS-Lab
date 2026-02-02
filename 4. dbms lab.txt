@@ -1,0 +1,111 @@
+to create sequence for a table:
+
+create sequence emp_sq start with 1 increment by 1;
+
+create table emp (emp_id int primary key, name varchar2(20));
+
+INSERT INTO EMP (emp_id, name) VALUES  (1, 'Frank Miller');
+INSERT INTO EMP (emp_id, name) VALUES  (2, 'Alice Brown');
+INSERT INTO EMP (emp_id, name) VALUES  (3, 'Bob Johnson');
+INSERT INTO EMP (emp_id, name) VALUES  (4, 'Miller');
+INSERT INTO EMP (emp_id, name) VALUES  (5, 'Eva Wilson');
+INSERT INTO EMP (emp_id, name) VALUES (6, 'Charlie Davis');
+INSERT INTO EMP (emp_id, name) VALUES  (7, 'Jane Smith');
+INSERT INTO EMP (emp_id, name) VALUES  (8, 'William');
+INSERT INTO EMP (emp_id, name) VALUES (9, 'Denis');
+INSERT INTO EMP (emp_id, name) VALUES  (10, 'Smith');
+
+INSERT INTO EMP VALUES (emp_sq.nextval, 'x1');
+INSERT INTO EMP VALUES (emp_sq.nextval, 'x2');
+INSERT INTO EMP VALUES (emp_sq.nextval, 'x3');
+INSERT INTO EMP VALUES (emp_sq.nextval, 'x4');
+INSERT INTO EMP VALUES (emp_sq.nextval, 'x5');
+INSERT INTO EMP VALUES (emp_sq.nextval, 'x6');
+INSERT INTO EMP VALUES (emp_sq.nextval, 'x7');
+INSERT INTO EMP VALUES (emp_sq.nextval, 'x8');
+INSERT INTO EMP VALUES (emp_sq.nextval, 'x9');
+INSERT INTO EMP VALUES (emp_sq.nextval, 'x10');
+
+select * from emp;
+
+to add fild to emp:
+alter table emp add mobile number;
+
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'abc', 9749385673);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'ghd', 8649648656);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'rtx', 9537547528);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'kfd', 6484658293);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'esr', 9637473847);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'res', 7453845278);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'yfh', 9646786549);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'drc', 8640657694);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'ser', 9837473564);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'erc', 8764264754);
+
+o/p: 
+    EMP_ID NAME                     MOBILE
+---------- -------------------- ----------
+         1 Frank Miller
+         2 Alice Brown
+         3 Bob Johnson
+         4 Fourth University
+         5 Eva Wilson
+         6 Charlie Davis
+         7 Jane Smith
+         8 William
+         9 Denis
+        10 Smith
+        21 x1
+        22 x2
+        23 x3
+        24 x4
+        25 x5
+        26 x6
+        27 x7
+        28 x8
+        29 x9
+        30 x10
+        31 abc                   974938573
+        32 ghd                  8649648656
+        33 rtx                  9537547528
+        34 kfd                  6484658293
+        35 esr                  9637473847
+        36 res                  7453845278
+        37 yfh                  9646786549
+        38 drc                  8640657694
+        39 ser                  9837473564
+        40 erc                  8764264754
+
+
+----------------------------------------
+to delete the data from the table: 
+truncate table emp;
+
+select * from emp;
+
+to delete sequence: 
+drop sequence emp_sq;
+
+iske baad firse beginning se code execute karna hai .... ie.
+
+create sequence emp_sq start with 1 increment by 1;
+
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'abc', 9749385673);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'ghd', 8649648656);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'rtx', 9537547528);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'kfd', 6484658293);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'esr', 9637473847);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'res', 7453845278);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'yfh', 9646786549);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'drc', 8640657694);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'ser', 9837473564);
+insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'erc', 8764264754);
+
+
+
+
+
+
+
+
+
