@@ -108,6 +108,8 @@ alter table emp add pincode int not null;
 delete data from the table then only you can edit its attributes 
 truncate table emp;
 
+alter table emp add pincode int not null;
+
 insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'abc', 9749385673, 856394);
 insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'ghd', 8649648656, 638463);
 insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'rtx', 9537547528, 856394);
@@ -118,3 +120,41 @@ insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'yfh', 96
 insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'drc', 8640657694, 856394);
 insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'ser', 9837473564, 638463);
 insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'erc', 8764264754, 638463);
+
+set linesize 200;
+
+select * from instructor;
+
+insert into instructor values(8, 'xyz', 1, 'N', 55000); 
+
+select * from instructor;
+
+select instructor_id, name from instructor WHERE dept_id = (SELECT dept_id FROM DEPARTMENT WHERE name = 'Computer Science');
+
+select instructor_id, name, salary from instructor WHERE dept_id = (SELECT dept_id FROM DEPARTMENT WHERE name = 'Computer Science');
+
+select i.instructor_id, i.name, i.salary, d.name from instructor I join Department d on i.dept_id = d.dept_id where d.name = 'Computer Science';
+
+select avg(i.salary) as avg_salary from instructor I join Department d on i.dept_id = d.dept_id where d.name = 'Computer Science';
+
+select * from department;
+
+select d.name as det_name, avg(i.salary) from department D join Instructor i on d.dept_id = i.dept_id group by d.name;
+
+select sum(salary) as total from instructor where salary < 30000;
+
+search building by its name
+select * from department where name like '%sci%';
+#ERROR bec s is not lowercase
+
+select * from department where lower(name) like '%sci%';
+
+select * from department where lower(name) like '%comp%';
+
+select * from department where lower(name) like '%bio%';
+
+select length(name) as total_length from instructor;
+
+select length(name) as total_length from instructor group by name; #decsending order of length
+
+retrive total no. of instructors
