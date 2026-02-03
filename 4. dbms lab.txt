@@ -101,11 +101,20 @@ insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'drc', 8640657694)
 insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'ser', 9837473564);
 insert into emp(emp_id, name, mobile) values (emp_sq.nextval, 'erc', 8764264754);
 
+add a new column pincode with not null constraints to the above esisting table.
+alter table emp add pincode int not null;
+#ERROR
 
+delete data from the table then only you can edit its attributes 
+truncate table emp;
 
-
-
-
-
-
-
+insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'abc', 9749385673, 856394);
+insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'ghd', 8649648656, 638463);
+insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'rtx', 9537547528, 856394);
+insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'kfd', 6484658293, 427483);
+insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'esr', 9637473847, 427483);
+insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'res', 7453845278, 638463);
+insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'yfh', 9646786549, 427483);
+insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'drc', 8640657694, 856394);
+insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'ser', 9837473564, 638463);
+insert into emp(emp_id, name, mobile, pincode) values (emp_sq.nextval, 'erc', 8764264754, 638463);
