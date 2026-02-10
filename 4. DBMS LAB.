@@ -41,3 +41,22 @@ select * from employee;
 
 display all emp names that starts with "a" and are at least 3 characers in lngth 
 select First_name from emp where lower(first_name) like 'a%' and length(first_name) >= 3;
+
+display departments having Dallas, Ney Yourk and Chicago location
+select dept_name, location from departments where location='dallas' or location='new york' or location='chicago';
+OR
+select dep_name, location from departments where lower(location) in ('dallas', 'new york', 'chicago');
+
+select first_name, job, salary from employee;
+
+display the names of employees who are woking as ckerk, salesmen or analyst and drawing a salary more than 3000
+select first_name, job, salary from employee where salary >= 3000 and lower(job) in ('clerk' , 'salesman', 'analyst');
+
+display the names of employees who are not working as managers.
+select first_name from employee where lower(job) != 'manager';
+
+display the names of emp who earns highest salary 
+select first_name, salary from employee where salary = (select max(salary) from employee);
+ 
+display the employee number and name of emp working as clerk an earning highest salary amongst clerks
+select emp_no, first_name, salary from employee where salary= (select max(salary) from employee where lower(job) = 'clerk');
