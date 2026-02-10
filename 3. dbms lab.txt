@@ -208,3 +208,23 @@ select name, salary,
 		else 'more salary'
 		end as salary_category
 from instructor;
+
+display name of all the instructors and concatenate with their department names.
+select i.name || ' - ' || d.name from instructor i join department d on i.dept_id = d.dept_id;
+
+retrive diff no. of instructors from each department
+select count(*) from instructor i join department d on i.dept_id = d.dept_id group by d.name;
+
+select count(*), d.name from instructor i join department d on i.dept_id = d.dept_id group by d.name;
+
+select count(Instructor_id) as inst_each_dept, d.name from instructor i join department d on i.dept_id = d.dept_id group by d.name;
+
+select count(Instructor_id) as inst_each_dept, d.name from instructor i join department d on i.dept_id = d.dept_id group by d.name;
+
+select name, dept_id from instructor;
+
+select count(distinct Instructor_id) as inst_each_dept, d.name from instructor i join department d on i.dept_id = d.dept_id group by d.name;
+
+find the names of all instructors whose salary is greater than at least one instructorin the biology department 
+select name, dept_id, salary from instructor;
+select i.name, i.salary, d.name from instructor i join department d on i.dept_id = d.dept_id where i.salary > any (select salary from instructor where dept_id=4);
