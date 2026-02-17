@@ -66,11 +66,19 @@ INSERT INTO Assignments (emp_id, proj_id, hours_worked) VALUES (5, 203, 35);
 INSERT INTO Assignments (emp_id, proj_id, hours_worked) VALUES (6, 204, 25);
 INSERT INTO Assignments (emp_id, proj_id, hours_worked) VALUES (7, 202, 45);
 
-retrive and disply he list of employees along with the department names
+retrive and disply he list of employees along with the department names (A intersection B)
 select e.emp_name, d.dept_name from Employees e inner join departments d on e.dept_id = d.dept_id;
 
-left join
+left join (all A + matching B)
 select e.emp_name, p.proj_name from Employees e left join assignments a on e.emp_id = a.emp_id left join projects p on a.proj_id = p.proj_id;
 
-right join
+right join (all B + matching A)
 select e.emp_name, p.proj_name from Employees e right join assignments a on e.emp_id = a.emp_id right join projects p on a.proj_id = p.proj_id;
+
+full outer join (full A  + full B)
+select e.emp_name, d.dept_name from employees e full outer join departments d on e.dept_id = d.dept_id;
+
+self join
+select e.emp_name as employe, m.emp_name as manager from employee e
+left join employees m on e.manager_id = m.emp_id;
+
