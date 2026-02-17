@@ -82,3 +82,5 @@ self join
 select e.emp_name as employe, m.emp_name as manager from employee e
 left join employees m on e.manager_id = m.emp_id;
 
+cross join
+select e.emp_name, p.proj_name from employees e cross join projects p;
