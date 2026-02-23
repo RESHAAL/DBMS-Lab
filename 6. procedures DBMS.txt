@@ -1,0 +1,93 @@
+PROCEDURES used when repetative work is required 
+create procedure hello_world ----> main part function
+as / is --> for oracle and AS only in MySQL
+begin -----> {
+	DBMS_OUTPUT.PUT_LINE('Hello World!')
+end -------> }
+/
+--------------------------------
+Create or replace procedure worlds 
+As
+Begin
+DBMS_OUTPUT.PUT_LINE('Hello World!');
+End;
+/
+
+Set ServerOutput ON;
+
+execute hello_world OR exec worlds;
+
+to replace an existing file :
+for oracle:
+create or replace procedure worlds 
+-------------------------------------------------------
+Create or replace procedure Addition
+As
+  a Number;
+  b Number;
+Begin
+  a:=15;
+  b:=10;
+  DBMS_OUTPUT.PUT_LINE('Result:' ||(a+b));
+End;
+/
+
+Set ServerOutput ON;
+exec Addition;
+
+o/p: Result:25
+PL/SQL procedure successfully completed.
+
+|---> pipe
+-------------------------------------------------------------
+Create or replace procedure Addition2(
+a in Number,
+b in number)
+as
+begin
+  DBMS_OUTPUT.PUT_LINE('Result:' ||(a+b));
+End;
+/
+
+Set ServerOutput ON;
+exec Addition2(15, 10);
+
+o/p: Result:25
+
+PL/SQL procedure successfully completed.
+------------------------------------------------
+
+Create or replace procedure Addition3(
+  a in Number,
+  b in number,
+  c out Number)
+as
+begin
+  c:=(a+b);
+  DBMS_OUTPUT.PUT_LINE('Result:' || c);
+End;
+/
+
+variable c1 Number;
+exec Addition3(15, 10, :c1);
+o/p: Result:25
+
+PL/SQL procedure successfully completed.
+---------------------------------------------------------------
+Q swapping without using 3rd variable
+
+Create or replace procedure Addition4(
+  a in Number,
+  b in number)
+as
+begin
+  a:=(a+b);
+  b:=(a-b);
+  a:=(a-b);
+DBMS_OUTPUT.PUT_LINE('a:' || a);
+DBMS_OUTPUT.PUT_LINE('b:' || b);
+End;
+/
+
+--------------------------------------------------------------
+Q find the largest number amongst 3
