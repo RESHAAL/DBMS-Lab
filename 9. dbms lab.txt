@@ -1,0 +1,59 @@
+EXCEPTIONS
+exceptions in C lang
+1. divisible by 0
+2. array index out of bound
+3. record not found
+
+HOW TO HANDLE EXCEPTIONS IN ORACLE
+syntax:
+C/R procedure   Exception(var in datatype)
+AS
+val1 exception
+val2 exception
+begin 
+code
+when val 1 exception
+	true state
+when val2 exception
+	true state
+end exception
+end 
+
+SYSTEM DEFINED
+1. division by 0
+2. not found
+3. not in range
+
+ex. find name and salary from employee where employee_name is input. 
+sol. 
+
+CREATE TABLE route_header(
+route_id NUMBER(5),
+origin VARCHAR2(20),
+destination VARCHAR2(20),
+fare NUMBER(7,2),
+distance NUMBER(3),
+capacity NUMBER(3)
+);
+
+DATA INSERTION:
+INSERT INTO route_header VALUES (102, 'trichy', 'madurai', 33,450, 56);
+INSERT INTO route_header VALUES (103, 'madurai', 'madras', 33,250, 50);
+INSERT INTO route_header VALUES (104, 'madurai', 'madras', 33,250, 50);
+INSERT INTO route_header VALUES (105, 'madurai', 'madras', 33,250, 50);
+
+PROCEDURES:
+CREATE OR REPLACE PROCEDURE route_header_proc1 (routeid route_header.route_id%type) AS
+a NUMBER(7,2);
+b NUMBER(4);
+BEGIN
+SELECT fare, distance INTO a, b FROM route_header WHERE route_id = routeid;
+
+IF b<500 THEN
+UPDATE route_header SET fare =190.98 WHERE route_id = routeid;
+ELSEIF b BETWEEN 501 AND 1000 THEN
+UPDATE route_header SET fare = 800.00 WHERE route_id = routeid;
+ELSEIF b>1000 THEN
+DBMS_OUTPUT.PUT_LINE('Sorry, distance too large');
+END IF;
+END;
