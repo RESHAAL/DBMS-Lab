@@ -1,0 +1,18 @@
+FUNCTIONS
+
+syntax:
+CREATE OR REPLACE function1(
+	arg1 datatype,
+	arg2 datatype) 
+return datatype;
+AS
+	var Number := 0;
+BEGIN
+	computation
+END function1
+	return var
+END
+/
+--------------------------------------------------------
+
+ex. 3 subject marks add them if total >75% then display else total >60
