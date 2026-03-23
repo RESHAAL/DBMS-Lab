@@ -24,8 +24,37 @@ SYSTEM DEFINED
 2. not found
 3. not in range
 
-ex. find name and salary from employee where employee_name is input. 
+ex. find name and salary from employee where employee_name is given as input.  
 sol. 
+CREATE OR REPLACE PROCEDURE GetEmployeeSalary (
+    id in NUMBER
+)
+AS
+    f_name employee.first_name%TYPE;
+    l_name employee.last_name%TYPE;
+    e_salary employee.salary%TYPE;
+BEGIN
+    SELECT first_name, last_name, salary
+    INTO f_name, l_name, e_salary
+    FROM employee
+    WHERE emp_no = id;
+
+    DBMS_OUTPUT.PUT_LINE('First Name: ' || f_name);
+    DBMS_OUTPUT.PUT_LINE('Last Name: ' || l_name);
+    DBMS_OUTPUT.PUT_LINE('Salary: ' || e_salary);
+when 
+    DBMS_OUTPUT.PUT_LINE('ID not found');
+END GetEmployeeSalary;
+END
+/
+
+Run this:
+SET SERVEROUTPUT ON;
+
+EXEC GetEmployeeSalary('John');
+----------------------------------------------------------------------------------------
+ex. 
+
 
 CREATE TABLE route_header(
 route_id NUMBER(5),
