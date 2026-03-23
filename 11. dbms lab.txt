@@ -15,4 +15,16 @@ END
 /
 --------------------------------------------------------
 
-ex. 3 subject marks add them if total >75% then display else total >60
+ex. 3 subject marks add them if total >75% then display else total >60  end 
+c/r function grade (m1, m2, m3 as int) return int
+AS
+	total int :=0;
+	percentage
+BEGIN
+	total := 
+if total > 75%
+	display
+
+
+
+-----------------------------------------------------------------
